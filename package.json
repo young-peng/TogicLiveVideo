@@ -1,0 +1,39 @@
+{
+  "name": "TogicLiveVideo",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "test": "jest"
+  },
+  "dependencies": {
+    "flux-standard-action": "^2.0.3",
+    "lodash": "^4.17.10",
+    "markdown": "^0.5.0",
+    "moment": "^2.22.1",
+    "prop-types": "^15.6.1",
+    "query-string": "^6.1.0",
+    "react": "16.3.1",
+    "react-addons-pure-render-mixin": "^15.6.2",
+    "react-native": "0.55.4",
+    "react-native-code-push": "^5.3.3",
+    "react-native-deprecated-custom-components": "^0.1.2",
+    "react-native-elements": "^0.19.1",
+    "react-native-vector-icons": "^4.6.0",
+    "react-redux": "^5.0.7",
+    "redux": "^4.0.0",
+    "redux-actions": "^2.3.2",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.2.0",
+    "util": "^0.10.3"
+  },
+  "devDependencies": {
+    "babel-jest": "22.4.3",
+    "babel-preset-react-native": "4.0.0",
+    "jest": "22.4.3",
+    "react-test-renderer": "16.3.1"
+  },
+  "jest": {
+    "preset": "react-native"
+  }
+}
