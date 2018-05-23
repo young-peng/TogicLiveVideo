@@ -1,4 +1,4 @@
-{
+export const layouts = {
   "background": "http://cdn.video.51togic.com/metro/background_2/201510/1444796762835.png",
   "metro_background": "http://cdn.video.51togic.com/metro/background/1520221029153.png",
   "tabs": [{

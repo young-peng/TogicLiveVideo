@@ -5,10 +5,12 @@
 // import * as utils from './utils'
 // import * as message from './message'
 import * as topic from './topic'
+import * as layout from './layout'
 
 export default {
     // ...user,
     // ...utils,
     // ...message,
-    ...topic
+    ...topic,
+    ...layout
 }

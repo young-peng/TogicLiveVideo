@@ -3,28 +3,26 @@
  */
 import React, {Component} from 'react'
 import {View, Text, StyleSheet, Dimensions, Alert, Easing, Platform} from 'react-native'
-import UserOverlay from '../components/UserOverlay'
-import MessageOverlay from '../components/MessageOverlay'
 import ScrollableTabs from '../components/ScrollableTabs'
-import * as TopicListComponent from './TopicList'
+import * as AppLayoutsComponent from './AppLayouts'
 import * as Tabs from '../constants/Tabs'
 import connectComponent from '../utils/connectComponent'
 
-const TopicList = connectComponent(TopicListComponent)
+const AppLayouts = connectComponent(AppLayoutsComponent)
 const {height, width} = Dimensions.get('window')
 
 class Home extends Component {
     componentDidMount () {
-        const {actions, topic} = this.props
-        if (!topic.all || !topic.all.length) {
-            actions.updateTopicsByTab('all')
+        const {actions, cell} = this.props
+        if (!cell.index || !cell.index.length) {
+            actions.updateLayoutByTab("index")
         }
 
         // Just for test on Android, see workaroundOfStartNative() in e2e/steps/init.js
         if (Platform.OS === 'android') {
             Alert.alert(
                 'Welcome',
-                'Welcome to Noder', [{
+                'Welcome to LiveVideo', [{
                     text: 'OK',
                     onPress: () => {}
                 }]
@@ -33,17 +31,17 @@ class Home extends Component {
     }
 
     _onPageChanged (page, isScrolling) {
-        const {actions, topic, ui} = this.props
+        const {actions, cell, ui} = this.props
         const tab = Tabs.tabs[page]
-        if (!topic[tab] || !topic[tab].length) {
-            actions.updateTopicsByTab(tab)
+        if (!cell[tab] || !cell[tab].length) {
+            actions.updateLayoutByTab(tab)
         }
     }
 
-    _renderTopicList () {
-        return ['good', 'ask', 'all', 'share', 'job'].map((item) => {
+    _renderLayouts () {
+        return ["index", "hot", "zone", "my"].map((item) => {
             return (
-                <TopicList
+                <AppLayouts
                     router={this.props.router}
                     key={item} tab={item}
                     isTabScrolling={() => this._scrollableTabs && this._scrollableTabs.isScrolling()()}
@@ -56,21 +54,16 @@ class Home extends Component {
         const {router, message} = this.props
         return (
             <View style={styles.container}>
+
                 <ScrollableTabs
                     ref={view => this._scrollableTabs = view}
-                    tabs={['精华', '问答', '主页', '分享', '招聘']}
+                    tabs={['影视', '热门', '专区', '设置']}
+                    index ={1}
                     onPageChangedAndAnimateEnd={this._onPageChanged.bind(this)}
                 >
-                    { this._renderTopicList() }
+                    { this._renderLayouts() }
                 </ScrollableTabs>
 
-                {/*<UserOverlay user={user.secret}*/}
-                             {/*toLogin={() => router.toLogin()}*/}
-                             {/*toUser={() => router.toUser({ userName: user.publicInfo.loginname })} />*/}
-
-                {/*<MessageOverlay user={user.secret}*/}
-                                {/*count={message.unreadMessageCount}*/}
-                                {/*toMessage={() => router.toMessage()} />*/}
             </View>
         )
     }
@@ -93,9 +86,7 @@ const styles = StyleSheet.create({
 export const LayoutComponent = Home
 export function mapStateToProps (state) {
     return {
-        user: state.user,
-        message: state.message,
-        topic: state.topic,
+        cell: state.cell,
         ui: state.home
     }
 }

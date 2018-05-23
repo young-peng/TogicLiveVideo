@@ -5,13 +5,15 @@ import React, {Component} from 'react'
 import {View, StyleSheet, Text, Image, TouchableHighlight, Dimensions} from 'react-native'
 import PropTypes from 'prop-types'
 import { parseImgUrl } from '../utils'
+const itemWidth = 280;
+const row = 2;
 
 const { width } = Dimensions.get('window')
+const  mMarginRight=(width-itemWidth*row)/(row+1);
 
 class LayoutCell extends Component {
     static propTypes = {
-        topic: PropTypes.object,
-        footer: PropTypes.node,
+        cell: PropTypes.object,
         onPress: PropTypes.func
     };
 
@@ -20,43 +22,36 @@ class LayoutCell extends Component {
     };
 
     render () {
-        const { cell } = this.props
-
+        const { cell } = this.props;
         return (
             <TouchableHighlight
                 onPress={() => { this.props.onPress(cell) }}
                 underlayColor='#3498DB'
                 key={cell.id}
-                style={styles.row}>
+                style={styles.imgWrapper}>
                 <View style={styles.imgWrapper}>
                     <Image
-                        ref={view => this.imgView = view}
                         style={styles.img}
-                        source={{uri: parseImgUrl(cell.background) }} />
+                        source={{uri: parseImgUrl(cell.content.background) }} />
                 </View>
             </TouchableHighlight>
         )
     }
 }
 
+
 var styles = StyleSheet.create({
-    'row': {
-        'flexDirection': 'row',
-        'borderBottomColor': 'rgba(0, 0, 0, 0.02)',
-        'borderBottomWidth': 1,
-        'paddingTop': 25,
-        'paddingRight': 25,
-        'paddingBottom': 25,
-        'paddingLeft': 20,
-        alignItems:'flex-start'
-    },
     'imgWrapper': {
-        flex:1
+        alignItems:'center',
+        width: itemWidth,
+        height:itemWidth,
+        marginLeft:mMarginRight,
+        marginBottom:10,
+        borderRadius:10
     },
     'img': {
-        'height': 324,
-        'width': 324,
-        'borderRadius': 20
+        width:itemWidth,
+        height:itemWidth,
     }
 })
 

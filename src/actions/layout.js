@@ -6,10 +6,19 @@ import * as markdown from 'markdown'
 import * as types from '../constants/ActionTypes'
 import * as layoutService from '../services/layoutService'
 
-export const getlayoutByTab = createAction(types.GET_LAYOUT_BY_TAB, async(tab, params) => {
-    return await layoutService.getLayoutByTab(tab, params)
+export const getLayoutByTab = createAction(types.GET_LAYOUT_BY_TAB, (tab, params) => {
+    return  layoutService.getLayoutByTab(tab, params)
 }, (tab) => {
     return {
         tab
+    }
+});
+
+export const updateLayoutByTab = createAction(types.UPDATE_LAYOUT_BY_TAB, (tab) => {
+    return  layoutService.getLayoutByTab(tab)
+}, (tab) => {
+    return {
+        tab,
+        sync: 'cell'
     }
 })

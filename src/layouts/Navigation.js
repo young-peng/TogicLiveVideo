@@ -2,7 +2,7 @@
  * Created by py on 18-5-21.
  */
 import React, {Component} from 'react'
-import {StyleSheet, View, Text, ImageBackground, Dimensions} from 'react-native'
+import {StyleSheet, View, Text, ImageBackground, Dimensions,Image} from 'react-native'
 import {Navigator} from 'react-native-deprecated-custom-components'
 import * as Home from './Home'
 import * as UtilsComponent from './Utils'

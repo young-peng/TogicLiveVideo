@@ -6,7 +6,7 @@ import packageJson from '../../package.json'
 export default {
     domain: 'https://cnodejs.org',
     apiPath: '/api/v1',
-    bgImgUri: 'http://7lrzfj.com1.z0.glb.clouddn.com/soliury213H.png',
+    bgImgUri: 'http://cdn.video.51togic.com/metro/background/1520221029153.png',
     replySuffix: '\nFrom [Noder](https://github.com/soliury/noder-react-native)',
     sourceInGithub: 'https://github.com/soliury/noder-react-native',
     package: packageJson,

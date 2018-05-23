@@ -5,8 +5,10 @@ import { combineReducers } from 'redux'
 import home from './home'
 import topic from './topic'
 import utils from './utils'
+import cell from "./cell"
 export default combineReducers({
     home,
     topic,
-    utils
+    utils,
+    cell
 })
