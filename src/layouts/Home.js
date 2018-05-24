@@ -54,7 +54,6 @@ class Home extends Component {
         const {router, message} = this.props
         return (
             <View style={styles.container}>
-
                 <ScrollableTabs
                     ref={view => this._scrollableTabs = view}
                     tabs={['影视', '热门', '专区', '设置']}

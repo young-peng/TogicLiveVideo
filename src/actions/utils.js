@@ -5,7 +5,7 @@ import {createAction} from 'redux-actions'
 import * as types from '../constants/ActionTypes'
 import * as storageService from '../services/storage'
 
-const syncReducer = ['user', 'message', 'topic']
+const syncReducer = ['user', 'programs', 'topic']
 
 export const toast = createAction(types.TOAST, (text, timeout) => {
     return {

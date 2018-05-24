@@ -4,13 +4,13 @@
 // import * as user from './user'
 // import * as utils from './utils'
 // import * as message from './message'
-import * as topic from './topic'
 import * as layout from './layout'
+import * as program from './program'
 
 export default {
     // ...user,
     // ...utils,
     // ...message,
-    ...topic,
-    ...layout
+    ...layout,
+    ...program
 }

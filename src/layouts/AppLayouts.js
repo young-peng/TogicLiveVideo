@@ -3,7 +3,6 @@ import {View, StyleSheet, Text, ListView, Dimensions, RefreshControl,ImageBackgr
 import PureRenderMixin from 'react-addons-pure-render-mixin'
 import LayoutCell from './../components/LayoutCell'
 import * as Constants from '../constants'
-import moment from 'moment'
 
 const {height, width} = Dimensions.get('window')
 
@@ -41,7 +40,7 @@ class AppLayouts extends Component {
         key={cell.id}
         cell={cell}
         onPress={(cell) => {
-          this.props.router.toTopic({
+          this.props.router.toPrograms({
             id: cell.id,
             cell
           })

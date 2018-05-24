@@ -2,7 +2,6 @@
  * Created by py on 18-5-21.
  */
 import {createAction} from 'redux-actions'
-import * as markdown from 'markdown'
 import * as types from '../constants/ActionTypes'
 import * as topicService from '../services/topicService'
 

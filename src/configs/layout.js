@@ -8,6 +8,7 @@ export const layouts = {
     "recommend_type": "",
     "cells": [{
       "id": "566950269929220d5df6abfd",
+      "category_id":"1",
       "location": {
         "w": 2,
         "h": 1,
@@ -34,6 +35,7 @@ export const layouts = {
       }
     },  {
       "id": "56544e595d8d0eb524f600e9",
+      "category_id":"7",
       "location": {
         "w": 2,
         "h": 1,
@@ -56,6 +58,7 @@ export const layouts = {
       }
     }, {
       "id": "56544e595d8d0eb524f600e8",
+      "category_id":"3",
       "location": {
         "w": 1,
         "h": 1,
@@ -78,6 +81,7 @@ export const layouts = {
       }
     }, {
       "id": "56544e285d8d0eb524f600e6",
+      "category_id":"2",
       "location": {
         "w": 1,
         "h": 1,
@@ -100,6 +104,7 @@ export const layouts = {
       }
     }, {
       "id": "56544e555d8d0eb524f600e7",
+      "category_id":"4",
       "location": {
         "w": 1,
         "h": 1,
@@ -125,6 +130,7 @@ export const layouts = {
       }
     }, {
       "id": "56544edd5d8d0eb524f600ec",
+      "category_id":"203",
       "location": {
         "w": 1,
         "h": 1,

@@ -3,12 +3,12 @@
  */
 import { combineReducers } from 'redux'
 import home from './home'
-import topic from './topic'
 import utils from './utils'
 import cell from "./cell"
+import programs from "./programs"
 export default combineReducers({
     home,
-    topic,
     utils,
-    cell
+    cell,
+    programs
 })

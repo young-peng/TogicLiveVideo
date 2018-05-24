@@ -13,6 +13,7 @@ import _ from 'lodash'
 // import * as Topic from '../layouts/Topic'
 // import * as Comment from '../layouts/Comment'
 // import * as Publish from '../layouts/Publish'
+import * as Programs from "../layouts/ProgramList"
 import * as HomeComponent from '../layouts/Home'
 import * as CustomSceneConfigs from '../configs/sceneConfig'
 import connectComponent from '../utils/connectComponent'
@@ -92,12 +93,12 @@ class Router {
     //     })
     // }
     //
-    // toTopic (props) {
-    //     this.push(props, {
-    //         component: Topic,
-    //         name: 'topic'
-    //     })
-    // }
+    toPrograms (props) {
+        this.push(props, {
+            component: Programs,
+            name: 'programs'
+        })
+    }
     //
     // toComment (props) {
     //     this.push(props, {
