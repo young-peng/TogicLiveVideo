@@ -5,7 +5,7 @@ import React, {Component} from 'react'
 import {View, StyleSheet, Text, Image, TouchableHighlight, Dimensions} from 'react-native'
 import PropTypes from 'prop-types'
 import { parseImgUrl } from '../utils'
-const itemWidth = 280;
+const itemWidth = 200;
 const row = 2;
 
 const { width } = Dimensions.get('window')
@@ -23,7 +23,6 @@ class ProgramCell extends Component {
 
     render () {
         const { program } = this.props;
-        console.log(program+"节目列表")
         return (
             <TouchableHighlight
                 onPress={() => { this.props.onPress(program) }}
@@ -34,6 +33,7 @@ class ProgramCell extends Component {
                     <Image
                         style={styles.img}
                         source={{uri: parseImgUrl(program.poster) }} />
+                    <Text style={styles.text}>{program.title}</Text>
                 </View>
             </TouchableHighlight>
         )
@@ -45,14 +45,19 @@ var styles = StyleSheet.create({
     'imgWrapper': {
         alignItems:'center',
         width: itemWidth,
-        height:itemWidth,
+        height:itemWidth+100,
         marginLeft:mMarginRight,
-        marginBottom:10,
-        borderRadius:10
+        marginBottom:100
     },
     'img': {
         width:itemWidth,
-        height:itemWidth,
+        height:itemWidth
+    },
+    text:{
+        color:'#adaca6',
+        fontSize:18,
+        marginTop:10,
+        textAlign:'center'
     }
 })
 

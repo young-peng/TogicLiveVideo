@@ -67,6 +67,7 @@ class ProgramList extends Component {
         showsVerticalScrollIndicator
         removeClippedSubviews
         enableEmptySections
+        contentContainerStyle={styles.row}
         ref={view => { this._listView = view }}
         initialListSize={10}
         pagingEnabled={false}
@@ -95,15 +96,9 @@ const styles = StyleSheet.create({
     flex: 1,
     width
   },
-  'row': {
-    'height': 90,
-    'flexDirection': 'row',
-    'borderBottomColor': 'rgba(0, 0, 0, 0.02)',
-    'borderBottomWidth': 1,
-    'paddingTop': 25,
-    'paddingRight': 0,
-    'paddingBottom': 25,
-    'paddingLeft': 20
+  row: {
+    flexDirection:'row', //改变ListView的主轴方向
+    flexWrap:'wrap', //换行
   },
   reachedEndLoading: {
     paddingTop: 20,
@@ -113,8 +108,7 @@ const styles = StyleSheet.create({
 
 export const LayoutComponent = ProgramList
 export function mapStateToProps (state, props) {
-  console.log(state,props);
-  const {cell} = props
+  // const {cell} = props
   const programs = state.programs.programs
   return {
     data: programs
