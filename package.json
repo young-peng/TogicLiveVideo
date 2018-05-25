@@ -18,8 +18,6 @@
     "e2e-server-native": "appium",
     "e2e-android": "codeceptjs run --profile=android",
     "e2e-ios": "codeceptjs run --profile=ios",
-    "checkversion": "node node_modules/fbjs-scripts/node/check-dev-engines.js package.json",
-    "postinstall": "npm run checkversion",
     "push-android": "code-push release-react TogicLiveVideo android --deploymentName Staging",
     "push-ios": "code-push release-react TogicLiveVideo ios --deploymentName Staging",
     "push-android-prod": "code-push release-react TogicLiveVideo android --deploymentName Production",

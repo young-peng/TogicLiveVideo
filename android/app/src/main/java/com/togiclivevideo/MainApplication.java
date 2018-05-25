@@ -32,9 +32,11 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+
             new VectorIconsPackage(),
-            new CodePush(null, getApplicationContext(), BuildConfig.DEBUG),
+            new CodePush("esI-EQ-_3WcKv8AkjXOuRWHmC6yue60f9873-abfb-4f14-8dbb-4a79eb39a5df", getApplicationContext(), BuildConfig.DEBUG),
             new ReactVideoPackage()
+
       );
     }
 
