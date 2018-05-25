@@ -12,7 +12,7 @@ export default function ({dispatch}) {
   return next => action => {
     const {meta = {}, payload} = action
     const {sequence = {}, tab} = meta
-    if (action.type === types.UPDATE_TOPICS_BY_TAB) {
+    if (action.type === types.UPDATE_LAYOUT_BY_TAB) {
       if (sequence.type === 'start') {
         sequenceList[sequence.id] = {
           start: new Date().getTime()

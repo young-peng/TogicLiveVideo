@@ -21,3 +21,11 @@ export const updateProgramByCategoryId = createAction(types.UPDATE_PROGRAMS_BY_C
         sync: 'programs'
     }
 });
+
+export const getProgramById = createAction(types.GET_PROGRAM_BY_ID,async (id,params) =>{
+    return await programService.getProgramById(id,params);
+},(program)=>{
+    return {
+        program
+    }
+})

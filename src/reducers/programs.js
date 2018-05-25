@@ -3,7 +3,8 @@
  */
 import * as types from '../constants/ActionTypes'
 const initialState = {
-   programs:[]
+   programs:[],
+   program:{}
 }
 
 export default function (state = initialState, action) {
@@ -24,6 +25,11 @@ export default function (state = initialState, action) {
             return {
                 ...state,
                 programs: state[programs].concat(payload)
+            }
+        case types.GET_PROGRAM_BY_ID:
+            return {
+                ...state,
+                program:payload
             }
         default:
             return state

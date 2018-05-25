@@ -5,18 +5,11 @@ import React from 'react'
 import ReactNative from 'react-native'
 import {Platform, BackHandler} from 'react-native'
 import _ from 'lodash'
-// import * as About from '../layouts/About'
-// import * as QRCode from '../layouts/QRCode'
-// import * as Login from '../layouts/Login'
-// import * as User from '../layouts/User'
-// import * as Message from '../layouts/Message'
-// import * as Topic from '../layouts/Topic'
-// import * as Comment from '../layouts/Comment'
-// import * as Publish from '../layouts/Publish'
 import * as Programs from "../layouts/ProgramList"
 import * as HomeComponent from '../layouts/Home'
 import * as CustomSceneConfigs from '../configs/sceneConfig'
 import connectComponent from '../utils/connectComponent'
+import * as Program from "../layouts/Program"
 
 const Home = connectComponent(HomeComponent)
 
@@ -100,12 +93,12 @@ class Router {
         })
     }
     //
-    // toComment (props) {
-    //     this.push(props, {
-    //         component: Comment,
-    //         name: 'comment'
-    //     })
-    // }
+    toProgram (props) {
+        this.push(props, {
+            component: Program,
+            name: 'program'
+        })
+    }
     //
     // toPublish (props) {
     //     this.push(props, {
