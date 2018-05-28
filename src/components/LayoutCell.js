@@ -5,11 +5,11 @@ import React, {Component} from 'react'
 import {View, StyleSheet, Text, Image, TouchableHighlight, Dimensions} from 'react-native'
 import PropTypes from 'prop-types'
 import { parseImgUrl } from '../utils'
-const itemWidth = 280;
-const row = 2;
+
+const column = 2;
 
 const { width } = Dimensions.get('window')
-const  mMarginRight=(width-itemWidth*row)/(row+1);
+const itemWidth = (width/column)-40;
 
 class LayoutCell extends Component {
     static propTypes = {
@@ -45,9 +45,8 @@ var styles = StyleSheet.create({
         alignItems:'center',
         width: itemWidth,
         height:itemWidth,
-        marginLeft:mMarginRight,
-        marginBottom:10,
-        borderRadius:10
+        margin:10,
+        // marginRight:mMarginRight
     },
     'img': {
         width:itemWidth,

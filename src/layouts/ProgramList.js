@@ -97,6 +97,7 @@ const styles = StyleSheet.create({
     width
   },
   row: {
+    justifyContent: 'center',
     flexDirection:'row', //改变ListView的主轴方向
     flexWrap:'wrap', //换行
   },

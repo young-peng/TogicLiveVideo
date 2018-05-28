@@ -5,11 +5,11 @@ import React, {Component} from 'react'
 import {View, StyleSheet, Text, Image, TouchableHighlight, Dimensions} from 'react-native'
 import PropTypes from 'prop-types'
 import { parseImgUrl } from '../utils'
-const itemWidth = 200;
-const row = 2;
+const column = 3;
 
 const { width } = Dimensions.get('window')
-const  mMarginRight=(width-itemWidth*row)/(row+1);
+const itemWidth = (width/column)-40;
+// const  mMarginRight=(width-itemWidth*row)/(row+1);
 
 class ProgramCell extends Component {
     static propTypes = {
@@ -46,8 +46,7 @@ var styles = StyleSheet.create({
         alignItems:'center',
         width: itemWidth,
         height:itemWidth+100,
-        marginLeft:mMarginRight,
-        marginBottom:100
+        margin:10
     },
     'img': {
         width:itemWidth,
