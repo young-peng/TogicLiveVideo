@@ -46,6 +46,7 @@ class ProgramList extends Component {
   }
 
   renderRow (programs) {
+      const {tabStatus} = this.props;
     return (
       <ProgramCell
         key={programs._id}
@@ -53,7 +54,8 @@ class ProgramList extends Component {
         onPress={(programs) => {
           this.props.router.toProgram({
             _id: programs._id,
-            programs
+            programs,
+              tabStatus
           })
         }}
          />
@@ -61,8 +63,7 @@ class ProgramList extends Component {
   }
 
   render () {
-    const { cell, actions} = this.props
-    const pullRefreshPending = true
+    const {pullRefreshPending, cell, actions} = this.props
     return (
       <ListView
         showsVerticalScrollIndicator
@@ -80,7 +81,7 @@ class ProgramList extends Component {
         refreshControl={
           <RefreshControl
             ref={(view) => this.refreshControl = view}
-            refreshing={false}
+            refreshing={pullRefreshPending}
             onRefresh={() => {
               actions.updateProgramByCategoryId(cell.category_id)
             }}
@@ -110,9 +111,11 @@ const styles = StyleSheet.create({
 
 export const LayoutComponent = ProgramList
 export function mapStateToProps (state, props) {
-  // const {cell} = props
-  const programs = state.programs.programs
-  return {
-    data: programs
-  }
+    const {tab} = props
+    const tabStatus = state.home[tab]
+    const programs = state.programs.programs
+    return {
+        data: programs,
+        ...tabStatus
+    }
 }

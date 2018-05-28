@@ -32,23 +32,6 @@ export default function (state = initialState, action) {
         ...state,
         [tab]: payload
       }
-    case types.GET_TOPIC_BY_ID:
-      return {
-        ...state,
-        cell: {
-          ...state.cell,
-          [id]: payload
-        }
-      }
-    case types.REMOVE_TOPIC_CACHE_BY_ID:
-      delete state.cell[id]
-      return {
-        ...state,
-        cell: {
-          ...state.cell,
-          [id]: undefined
-        }
-      }
     default:
       return state
   }

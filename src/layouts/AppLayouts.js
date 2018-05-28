@@ -35,6 +35,7 @@ class AppLayouts extends Component {
   }
 
   renderRow (cell) {
+    const {tab} = this.props
     return (
       <LayoutCell
         key={cell.id}
@@ -42,7 +43,8 @@ class AppLayouts extends Component {
         onPress={(cell) => {
           this.props.router.toPrograms({
             id: cell.id,
-            cell
+            cell,
+            tab
           })
         }}
          />
