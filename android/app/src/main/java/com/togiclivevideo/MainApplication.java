@@ -10,6 +10,7 @@ import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
 import com.facebook.soloader.SoLoader;
 import com.brentvatne.react.ReactVideoPackage;
+import com.github.yamill.orientation.OrientationPackage;
 
 import java.util.Arrays;
 import java.util.List;
@@ -35,7 +36,8 @@ public class MainApplication extends Application implements ReactApplication {
 
             new VectorIconsPackage(),
             new CodePush("esI-EQ-_3WcKv8AkjXOuRWHmC6yue60f9873-abfb-4f14-8dbb-4a79eb39a5df", getApplicationContext(), BuildConfig.DEBUG),
-            new ReactVideoPackage()
+            new ReactVideoPackage(),
+            new OrientationPackage()
 
       );
     }

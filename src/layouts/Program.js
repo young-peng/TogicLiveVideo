@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import {View, Dimensions, Image, Text, Slider, TouchableWithoutFeedback, TouchableOpacity, Button, StyleSheet} from 'react-native';
 import Video from 'react-native-video';
 import Orientation from 'react-native-orientation';
-import {Icon} from "react-native-elements";
 
 const screenWidth = Dimensions.get('window').width;
 
@@ -222,6 +221,7 @@ function formatTime(second) {
 
     /// 点击了工具栏上的全屏按钮
     onControlShrinkPress() {
+        console.log(this.state.isFullScreen)
         if (this.state.isFullScreen) {
             Orientation.lockToPortrait();
         } else {
@@ -265,7 +265,7 @@ function formatTime(second) {
                 isFullScreen: false,
             })
         }
-        // Orientation.unlockAllOrientations();
+        Orientation.unlockAllOrientations();
     };
 
     /// -------外部调用事件方法-------
