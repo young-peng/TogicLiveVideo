@@ -25,7 +25,7 @@ class ProgramList extends Component {
   componentDidMount () {
         const {actions, id, cell} = this.props
         if (cell) {
-            actions.getProgramByCategoryId(id)
+            actions.getProgramByCategoryId(cell.category_id)
         }
   }
 
@@ -39,8 +39,8 @@ class ProgramList extends Component {
     const {actions, cell, page,limit,data} = this.props
     if (data.length) {
       actions.getProgramByCategoryId(cell.category_id, {
-        page: page + 1,
-        limit
+        page_no: page + 1,
+        page_size:limit
       })
     }
   }
