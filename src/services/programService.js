@@ -10,7 +10,6 @@ export function getProgramByCategoryId (category_id = '1', params = {}) {
         page_no:1,
         ...params
     }).then(data=>{
-        console.log(data);
         if(data.items) {
             return data.items;
         } else {

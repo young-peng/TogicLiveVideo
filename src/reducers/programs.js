@@ -4,13 +4,14 @@
 import * as types from '../constants/ActionTypes'
 const initialState = {
    programs:[],
-   program:{}
+   program:{},
+   pullRefreshPending: false,
 }
 
 export default function (state = initialState, action) {
     const {payload, error, meta = {}, type} = action
     const {sequence = {} ,programs } = meta
-
+    const pending = sequence.type === 'start'
     if (sequence.type === 'start' || error) {
         return state
     }
@@ -19,12 +20,14 @@ export default function (state = initialState, action) {
         case types.GET_PROGRAMS_BY_CATEGORYID:
             return {
                 ...state,
-                programs: payload
+                programs: payload,
+                pullRefreshPending: pending
             }
         case types.UPDATE_PROGRAMS_BY_CATEGORYID:
             return {
                 ...state,
-                programs: state[programs].concat(payload)
+                programs: payload,
+                pullRefreshPending: pending
             }
         case types.GET_PROGRAM_BY_ID:
             return {

@@ -61,7 +61,8 @@ class ProgramList extends Component {
   }
 
   render () {
-    const {pullRefreshPending, cell, actions} = this.props
+    const { cell, actions} = this.props
+    const pullRefreshPending = true
     return (
       <ListView
         showsVerticalScrollIndicator
@@ -79,7 +80,7 @@ class ProgramList extends Component {
         refreshControl={
           <RefreshControl
             ref={(view) => this.refreshControl = view}
-            refreshing={pullRefreshPending}
+            refreshing={false}
             onRefresh={() => {
               actions.updateProgramByCategoryId(cell.category_id)
             }}
