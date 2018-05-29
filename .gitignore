@@ -70,3 +70,4 @@ buck-out/
 将删除 package.json
 将删除 src/
 将删除 yarn.lock
+package-lock.json
